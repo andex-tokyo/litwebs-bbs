@@ -22,6 +22,11 @@
             <input type="submit" value="削除">
           </form>
         </span>
+        <span>
+          <form action="/edit/<%= content.id %>" method="post">
+            <input type="submit" value="編集">
+          </form>
+        </span>
       </li>
     <% end %>
   </ul>
