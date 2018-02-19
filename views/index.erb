@@ -13,10 +13,12 @@
   </form>
   
   <ul>
-    <li>
-      <p>投稿者(name)</p>
-      <p>本文(body)</p>
-    </li>
+    <% @contents.each do |content| %>
+      <li>
+        <p><%= content.name %></p>
+        <p><%= content.body %></p>
+      </li>
+    <% end %>
   </ul>
 </body>
 </html>
