@@ -18,3 +18,8 @@ post '/new' do
     
     redirect '/'
 end
+
+post '/delete/:id' do
+    Contribution.find(params[:id]).destroy
+    redirect '/'
+end

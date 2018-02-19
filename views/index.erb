@@ -17,6 +17,11 @@
       <li>
         <p><%= content.name %></p>
         <p><%= content.body %></p>
+         <span>
+          <form action="/delete/<%= content.id %>" method="post">
+            <input type="submit" value="削除">
+          </form>
+        </span>
       </li>
     <% end %>
   </ul>
