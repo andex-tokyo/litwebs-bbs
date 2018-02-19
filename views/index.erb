@@ -6,9 +6,10 @@
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
-  <form action="/new" method="post">
+  <form action="/new" method="post" enctype="multipart_form-data">
     <p>名前:<input type="text" name="user_name"></p>
     <p>本文:<input type="text" name="body"></p>
+    <p><input type="file" name="file"></p>
     <p> <input type="submit" value="投稿"></p>
   </form>
   
@@ -17,6 +18,9 @@
       <li>
         <p><%= content.name %></p>
         <p><%= content.body %></p>
+        <% unless content.img.empty? %>
+          <p><img src="<%= content.img %>"></p>
+        <% end %>
       </li>
     <% end %>
   </ul>
