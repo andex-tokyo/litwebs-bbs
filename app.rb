@@ -13,8 +13,18 @@ end
 post '/new' do
     Contribution.create({
         name: params[:user_name],
-        body: params[:body]
+        body: params[:body],
+        good: 0
     })
     
+    redirect '/'
+end
+
+post '/good/:id' do
+    @content = Contribution.find(params[:id])
+    good = @content.good
+    @content.update({
+        good: good + 1
+    })
     redirect '/'
 end
